@@ -14,6 +14,25 @@
 		1ED4D8202DB6944100EB4949 /* petCare_iOS_cw2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D81F2DB6944100EB4949 /* petCare_iOS_cw2Tests.swift */; };
 		1ED4D82A2DB6944100EB4949 /* petCare_iOS_cw2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8292DB6944100EB4949 /* petCare_iOS_cw2UITests.swift */; };
 		1ED4D82C2DB6944100EB4949 /* petCare_iOS_cw2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D82B2DB6944100EB4949 /* petCare_iOS_cw2UITestsLaunchTests.swift */; };
+		1ED4D83E2DB695D700EB4949 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D83D2DB695D700EB4949 /* WelcomeView.swift */; };
+		1ED4D8402DB695E800EB4949 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D83F2DB695E800EB4949 /* LoginView.swift */; };
+		1ED4D8422DB6960100EB4949 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8412DB6960100EB4949 /* SignUpView.swift */; };
+		1ED4D8442DB6961F00EB4949 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8432DB6961F00EB4949 /* HomeView.swift */; };
+		1ED4D8462DB6963B00EB4949 /* PetDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8452DB6963B00EB4949 /* PetDetailsView.swift */; };
+		1ED4D8482DB6964F00EB4949 /* LostAndFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8472DB6964F00EB4949 /* LostAndFoundView.swift */; };
+		1ED4D84A2DB6965F00EB4949 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8492DB6965F00EB4949 /* ReportView.swift */; };
+		1ED4D84C2DB6967000EB4949 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D84B2DB6967000EB4949 /* NotificationsView.swift */; };
+		1ED4D84E2DB6968100EB4949 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D84D2DB6968100EB4949 /* ProfileView.swift */; };
+		1ED4D8502DB6969D00EB4949 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D84F2DB6969D00EB4949 /* NotificationService.swift */; };
+		1ED4D8522DB696B100EB4949 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8512DB696B100EB4949 /* LocationService.swift */; };
+		1ED4D8542DB696C200EB4949 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8532DB696C200EB4949 /* DataService.swift */; };
+		1ED4D8572DB6994B00EB4949 /* dog4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ED4D8562DB6994B00EB4949 /* dog4.png */; };
+		1ED4D8592DB8D4D200EB4949 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8582DB8D4D200EB4949 /* MainTabView.swift */; };
+		1ED4D85C2DB8DFCB00EB4949 /* PetCareModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D85A2DB8DFCB00EB4949 /* PetCareModel.xcdatamodeld */; };
+		1ED4D85E2DB9410200EB4949 /* AppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D85D2DB9410100EB4949 /* AppointmentsView.swift */; };
+		1ED4D8602DB941FE00EB4949 /* BookAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D85F2DB941FE00EB4949 /* BookAppointmentView.swift */; };
+		1ED4D8622DB9433100EB4949 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8612DB9433100EB4949 /* SettingsView.swift */; };
+		1ED4D8642DB9454400EB4949 /* Mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8632DB9454400EB4949 /* Mapview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +63,25 @@
 		1ED4D8252DB6944100EB4949 /* petCare_iOS_cw2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = petCare_iOS_cw2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED4D8292DB6944100EB4949 /* petCare_iOS_cw2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = petCare_iOS_cw2UITests.swift; sourceTree = "<group>"; };
 		1ED4D82B2DB6944100EB4949 /* petCare_iOS_cw2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = petCare_iOS_cw2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1ED4D83D2DB695D700EB4949 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		1ED4D83F2DB695E800EB4949 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1ED4D8412DB6960100EB4949 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		1ED4D8432DB6961F00EB4949 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1ED4D8452DB6963B00EB4949 /* PetDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsView.swift; sourceTree = "<group>"; };
+		1ED4D8472DB6964F00EB4949 /* LostAndFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostAndFoundView.swift; sourceTree = "<group>"; };
+		1ED4D8492DB6965F00EB4949 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		1ED4D84B2DB6967000EB4949 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		1ED4D84D2DB6968100EB4949 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1ED4D84F2DB6969D00EB4949 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		1ED4D8512DB696B100EB4949 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		1ED4D8532DB696C200EB4949 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		1ED4D8562DB6994B00EB4949 /* dog4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog4.png; sourceTree = "<group>"; };
+		1ED4D8582DB8D4D200EB4949 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		1ED4D85B2DB8DFCB00EB4949 /* PetCareModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetCareModel.xcdatamodel; sourceTree = "<group>"; };
+		1ED4D85D2DB9410100EB4949 /* AppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsView.swift; sourceTree = "<group>"; };
+		1ED4D85F2DB941FE00EB4949 /* BookAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAppointmentView.swift; sourceTree = "<group>"; };
+		1ED4D8612DB9433100EB4949 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1ED4D8632DB9454400EB4949 /* Mapview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +132,11 @@
 		1ED4D80D2DB6943C00EB4949 /* petCare_iOS_cw2 */ = {
 			isa = PBXGroup;
 			children = (
+				1ED4D83C2DB695AD00EB4949 /* Assets */,
+				1ED4D83B2DB6959E00EB4949 /* Services */,
+				1ED4D83A2DB6958E00EB4949 /* ViewModels */,
+				1ED4D8392DB6958100EB4949 /* Views */,
+				1ED4D8382DB6957700EB4949 /* Models */,
 				1ED4D80E2DB6943C00EB4949 /* petCare_iOS_cw2App.swift */,
 				1ED4D8102DB6943C00EB4949 /* ContentView.swift */,
 				1ED4D8122DB6944100EB4949 /* Assets.xcassets */,
@@ -125,6 +168,60 @@
 				1ED4D82B2DB6944100EB4949 /* petCare_iOS_cw2UITestsLaunchTests.swift */,
 			);
 			path = petCare_iOS_cw2UITests;
+			sourceTree = "<group>";
+		};
+		1ED4D8382DB6957700EB4949 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1ED4D8392DB6958100EB4949 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1ED4D83D2DB695D700EB4949 /* WelcomeView.swift */,
+				1ED4D83F2DB695E800EB4949 /* LoginView.swift */,
+				1ED4D8412DB6960100EB4949 /* SignUpView.swift */,
+				1ED4D8432DB6961F00EB4949 /* HomeView.swift */,
+				1ED4D8452DB6963B00EB4949 /* PetDetailsView.swift */,
+				1ED4D8472DB6964F00EB4949 /* LostAndFoundView.swift */,
+				1ED4D8492DB6965F00EB4949 /* ReportView.swift */,
+				1ED4D85A2DB8DFCB00EB4949 /* PetCareModel.xcdatamodeld */,
+				1ED4D84B2DB6967000EB4949 /* NotificationsView.swift */,
+				1ED4D84D2DB6968100EB4949 /* ProfileView.swift */,
+				1ED4D8582DB8D4D200EB4949 /* MainTabView.swift */,
+				1ED4D85D2DB9410100EB4949 /* AppointmentsView.swift */,
+				1ED4D85F2DB941FE00EB4949 /* BookAppointmentView.swift */,
+				1ED4D8612DB9433100EB4949 /* SettingsView.swift */,
+				1ED4D8632DB9454400EB4949 /* Mapview.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1ED4D83A2DB6958E00EB4949 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1ED4D83B2DB6959E00EB4949 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1ED4D84F2DB6969D00EB4949 /* NotificationService.swift */,
+				1ED4D8512DB696B100EB4949 /* LocationService.swift */,
+				1ED4D8532DB696C200EB4949 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1ED4D83C2DB695AD00EB4949 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1ED4D8562DB6994B00EB4949 /* dog4.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +330,7 @@
 			files = (
 				1ED4D8162DB6944100EB4949 /* Preview Assets.xcassets in Resources */,
 				1ED4D8132DB6944100EB4949 /* Assets.xcassets in Resources */,
+				1ED4D8572DB6994B00EB4949 /* dog4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +356,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ED4D8112DB6943C00EB4949 /* ContentView.swift in Sources */,
+				1ED4D8542DB696C200EB4949 /* DataService.swift in Sources */,
+				1ED4D84C2DB6967000EB4949 /* NotificationsView.swift in Sources */,
+				1ED4D8422DB6960100EB4949 /* SignUpView.swift in Sources */,
+				1ED4D83E2DB695D700EB4949 /* WelcomeView.swift in Sources */,
+				1ED4D8502DB6969D00EB4949 /* NotificationService.swift in Sources */,
+				1ED4D85C2DB8DFCB00EB4949 /* PetCareModel.xcdatamodeld in Sources */,
+				1ED4D8442DB6961F00EB4949 /* HomeView.swift in Sources */,
+				1ED4D8402DB695E800EB4949 /* LoginView.swift in Sources */,
+				1ED4D84A2DB6965F00EB4949 /* ReportView.swift in Sources */,
+				1ED4D8482DB6964F00EB4949 /* LostAndFoundView.swift in Sources */,
+				1ED4D8602DB941FE00EB4949 /* BookAppointmentView.swift in Sources */,
+				1ED4D8522DB696B100EB4949 /* LocationService.swift in Sources */,
+				1ED4D8642DB9454400EB4949 /* Mapview.swift in Sources */,
+				1ED4D85E2DB9410200EB4949 /* AppointmentsView.swift in Sources */,
 				1ED4D80F2DB6943C00EB4949 /* petCare_iOS_cw2App.swift in Sources */,
+				1ED4D84E2DB6968100EB4949 /* ProfileView.swift in Sources */,
+				1ED4D8462DB6963B00EB4949 /* PetDetailsView.swift in Sources */,
+				1ED4D8592DB8D4D200EB4949 /* MainTabView.swift in Sources */,
+				1ED4D8622DB9433100EB4949 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +698,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1ED4D85A2DB8DFCB00EB4949 /* PetCareModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1ED4D85B2DB8DFCB00EB4949 /* PetCareModel.xcdatamodel */,
+			);
+			currentVersion = 1ED4D85B2DB8DFCB00EB4949 /* PetCareModel.xcdatamodel */;
+			name = PetCareModel.xcdatamodeld;
+			path = /Users/imanthiabeyratne/Documents/iOS_cw2/petCare_iOS_cw2/petCare_iOS_cw2/Views/PetCareModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1ED4D8032DB6943C00EB4949 /* Project object */;
 }
