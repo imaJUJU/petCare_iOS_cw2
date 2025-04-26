@@ -9,161 +9,124 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var searchText = ""
+    @State private var userName: String = "Pet Lover" // You can change or fetch dynamically later
+
+    var greetingText: String {
+        let hour = Calendar.current.component(.hour, from: Date())
+        switch hour {
+        case 6..<12: return "Good Morning"
+        case 12..<17: return "Good Afternoon"
+        case 17..<22: return "Good Evening"
+        default: return "Welcome Back"
+        }
+    }
 
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 24) {
 
-                    // Search Bar
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(.gray)
-                        TextField("Search for services, vets...", text: $searchText)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .font(.body)
-                            .foregroundColor(.primary)
-                    }
-                    .padding(12)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(14)
-                    .padding(.horizontal)
+                    // Top Greeting and Search Bar
+                    VStack(alignment: .leading, spacing: 16) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("👋 \(greetingText),")
+                                    .font(.title3.weight(.semibold))
+                                    .foregroundColor(.primary)
+                            }
 
-                    // Hero Section with Image & Modern Styling
-                    ZStack(alignment: .leading) {
-                        Image("dog_illustration")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: 220)
-                            .clipped()
-                            .cornerRadius(20)
-                            .overlay(
-                                LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.3), Color.black.opacity(0)]), startPoint: .bottom, endPoint: .top)
-                                    .cornerRadius(20)
-                            )
-
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("What Services do you Need?")
-                                .font(.title2.bold())
-                                .foregroundColor(.white)
-                                .shadow(radius: 4)
+                            Spacer()
 
                             Button(action: {
-                                // Navigate to services
+                                // Notification button action
                             }) {
-                                Text("Get Started")
-                                    .font(.subheadline)
-                                    .fontWeight(.semibold)
-                                    .padding(.vertical, 10)
-                                    .padding(.horizontal, 20)
-                                    .background(Color(.systemBlue))
-                                    .foregroundColor(.white)
-                                    .cornerRadius(12)
-                                    .shadow(radius: 4)
+                                Image(systemName: "bell.fill")
+                                    .font(.title2)
+                                    .foregroundColor(.accentColor)
                             }
                         }
+                        .padding(.horizontal)
+
+                        // Search Bar
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.gray)
+                            TextField("Search for vets, food, clinics...", text: $searchText)
+                                .foregroundColor(.primary)
+                        }
                         .padding()
-                    }
-                    .padding(.horizontal)
-
-                    // Explore Services
-                    Text("Explore Services")
-                        .font(.headline)
-                        .foregroundColor(.primary)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(14)
                         .padding(.horizontal)
-
-                    HStack(spacing: 24) {
-                        ServiceItem(title: "Vet Care", imageName: "stethoscope", backgroundColor: Color(.systemBlue))
-                        ServiceItem(title: "Grooming", imageName: "scissors", backgroundColor: Color(.systemPurple))
-                        ServiceItem(title: "Training", imageName: "pawprint.fill", backgroundColor: Color(.systemGreen))
                     }
-                    .padding(.horizontal)
+                    .padding(.top)
 
-                    // Nearby Vets Section
-                    Text("Veterinary Near You")
-                        .font(.headline)
-                        .foregroundColor(.primary)
+                    // Quick Access
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text("Quick Access")
+                            .font(.headline)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 24) {
+                            QuickAccessTile(title: "Appointments", systemImage: "calendar.badge.plus")
+                            QuickAccessTile(title: "Map", systemImage: "map.fill")
+                            QuickAccessTile(title: "Lost & Found", systemImage: "pawprint.fill")
+                            QuickAccessTile(title: "Settings", systemImage: "gearshape.fill")
+                        }
                         .padding(.horizontal)
-
-                    VStack(spacing: 16) {
-                        VetCard(name: "Happy Paws Clinic", distance: "1.2 km")
-                        VetCard(name: "Pet Health Centre", distance: "2.5 km")
                     }
-                    .padding(.horizontal)
+
+                    // Featured Clinics
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text("Featured Clinics")
+                            .font(.headline)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                            VetCard(name: "Happy Paws Clinic", distance: "1.2 km")
+                            VetCard(name: "Pet Wellness Center", distance: "2.8 km")
+                            VetCard(name: "Furry Friends Hospital", distance: "3.5 km")
+                        }
+                        .padding(.horizontal)
+                    }
                 }
-                .padding(.vertical)
+                .padding(.bottom)
             }
+            .background(Color(.systemGroupedBackground))
             .navigationTitle("Home")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(systemName: "bell")
-                        .foregroundColor(.primary)
-                }
-            }
-            .background(Color(.systemBackground))
         }
     }
 }
 
-// MARK: - Components
-
-struct ServiceItem: View {
-    let title: String
-    let imageName: String
-    let backgroundColor: Color
+struct QuickAccessTile: View {
+    var title: String
+    var systemImage: String
 
     var body: some View {
         VStack(spacing: 8) {
-            Image(systemName: imageName)
-                .font(.system(size: 32))
-                .foregroundColor(.white)
-                .padding()
-                .background(backgroundColor)
-                .clipShape(Circle())
-                .shadow(radius: 5)
+            ZStack {
+                Circle()
+                    .fill(Color.accentColor.opacity(0.9))
+                    .frame(width: 60, height: 60)
+
+                Image(systemName: systemImage)
+                    .font(.system(size: 24))
+                    .foregroundColor(.white)
+            }
             Text(title)
-                .font(.subheadline)
-                .fontWeight(.medium)
+                .font(.caption)
                 .foregroundColor(.primary)
         }
-        .frame(maxWidth: .infinity)
     }
 }
 
-struct VetCard: View {
-    let name: String
-    let distance: String
 
-    var body: some View {
-        HStack(spacing: 16) {
-            Image(systemName: "cross.case.fill")
-                .font(.system(size: 26))
-                .foregroundColor(.white)
-                .padding()
-                .background(Color(.systemBlue))
-                .clipShape(Circle())
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text(name)
-                    .font(.headline)
-                    .foregroundColor(.primary)
-                Text(distance)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
-            Spacer()
-        }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(16)
-        .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
-    }
-}
-
+// Preview
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
 }
+
 
 

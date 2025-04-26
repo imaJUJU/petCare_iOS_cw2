@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var username: String = ""
-    @State private var password: String = ""
+    @StateObject private var viewModel = AuthViewModel()
     @State private var isPasswordVisible: Bool = false
 
     var body: some View {
         NavigationView {
             VStack(spacing: 24) {
-
+                
                 // MARK: - App Title
                 HStack(spacing: 0) {
                     Text("Pet")
@@ -27,12 +26,14 @@ struct LoginView: View {
                 }
                 .padding(.top, 40)
 
-                // MARK: - Username Field
+                // MARK: - Email Field
                 HStack {
-                    TextField("Username or mobile number", text: $username)
+                    TextField("Email", text: $viewModel.email)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
-                    if !username.isEmpty {
+                        .keyboardType(.emailAddress)
+
+                    if !viewModel.email.isEmpty {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(.green)
                     }
@@ -44,11 +45,14 @@ struct LoginView: View {
                 // MARK: - Password Field
                 HStack {
                     if isPasswordVisible {
-                        TextField("Password", text: $password)
+                        TextField("Password", text: $viewModel.password)
                     } else {
-                        SecureField("Password", text: $password)
+                        SecureField("Password", text: $viewModel.password)
                     }
-                    Button(action: { isPasswordVisible.toggle() }) {
+
+                    Button(action: {
+                        isPasswordVisible.toggle()
+                    }) {
                         Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
                             .foregroundColor(.gray)
                     }
@@ -59,7 +63,7 @@ struct LoginView: View {
 
                 // MARK: - Login Button
                 Button(action: {
-                    // Handle login action
+                    viewModel.loginUser()
                 }) {
                     Text("Log in")
                         .font(.headline)
@@ -68,7 +72,20 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .cornerRadius(25)
                 }
+
                 .padding(.top, 8)
+
+                // MARK: - Error Message
+                if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage)
+                        .font(.footnote)
+                        .foregroundColor(.red)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                }
+                NavigationLink(destination: MainTabView(), isActive: $viewModel.loginSuccess) {
+                    EmptyView()
+                }
 
                 // MARK: - Forgotten Password
                 Button(action: {
@@ -110,7 +127,7 @@ struct LoginView: View {
                 Spacer()
 
                 // MARK: - Create New Account
-                NavigationLink(destination: /* SignUpView() */ Text("Sign Up Screen")) {
+                NavigationLink(destination: SignUpView()) {
                     Text("Create new account")
                         .font(.footnote)
                         .foregroundColor(.blue)
@@ -129,6 +146,7 @@ struct LoginView: View {
         }
     }
 }
+
 
 #Preview {
     LoginView()

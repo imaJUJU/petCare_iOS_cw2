@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @State private var email: String = ""
-    @State private var password: String = ""
-    @State private var confirmPassword: String = ""
-    @State private var isPasswordVisible: Bool = false
-    @State private var isConfirmPasswordVisible: Bool = false
+    @StateObject private var viewModel = AuthViewModel()
 
     var body: some View {
         NavigationView {
             VStack(spacing: 24) {
 
-                // MARK: - App Title
-                HStack(spacing: 0) {
+                // MARK: - Title
+                HStack(spacing: -5) {
                     Text("Pet")
                         .font(.system(size: 32, weight: .bold))
                         .foregroundColor(.primary)
@@ -29,8 +25,8 @@ struct SignUpView: View {
                 }
                 .padding(.top, 40)
 
-                // MARK: - Email Field
-                TextField("Email", text: $email)
+                // MARK: - Email
+                TextField("Email", text: $viewModel.email)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
@@ -38,53 +34,28 @@ struct SignUpView: View {
                     .background(Color(UIColor.secondarySystemBackground))
                     .cornerRadius(12)
 
-                // MARK: - Password Field
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Create a password")
-                        .font(.footnote)
-                        .foregroundColor(.primary)
-
-                    HStack {
-                        if isPasswordVisible {
-                            TextField("must be 8 characters", text: $password)
-                        } else {
-                            SecureField("must be 8 characters", text: $password)
-                        }
-                        Button(action: { isPasswordVisible.toggle() }) {
-                            Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
-                                .foregroundColor(.gray)
-                        }
-                    }
+                // MARK: - Password
+                SecureField("Create a password (min 8 characters)", text: $viewModel.password)
                     .padding()
                     .background(Color(UIColor.secondarySystemBackground))
                     .cornerRadius(12)
-                }
 
-                // MARK: - Confirm Password Field
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Confirm password")
-                        .font(.footnote)
-                        .foregroundColor(.primary)
-
-                    HStack {
-                        if isConfirmPasswordVisible {
-                            TextField("repeat password", text: $confirmPassword)
-                        } else {
-                            SecureField("repeat password", text: $confirmPassword)
-                        }
-                        Button(action: { isConfirmPasswordVisible.toggle() }) {
-                            Image(systemName: isConfirmPasswordVisible ? "eye.slash" : "eye")
-                                .foregroundColor(.gray)
-                        }
-                    }
+                // MARK: - Confirm Password
+                SecureField("Confirm password", text: $viewModel.confirmPassword)
                     .padding()
                     .background(Color(UIColor.secondarySystemBackground))
                     .cornerRadius(12)
+
+                // MARK: - Error Message
+                if let error = viewModel.errorMessage {
+                    Text(error)
+                        .foregroundColor(.red)
+                        .font(.caption)
                 }
 
                 // MARK: - Sign Up Button
                 Button(action: {
-                    // Handle sign-up logic
+                    viewModel.registerUser()
                 }) {
                     Text("Sign up")
                         .font(.headline)
@@ -93,34 +64,8 @@ struct SignUpView: View {
                         .foregroundColor(.white)
                         .cornerRadius(25)
                 }
-                .padding(.top, 8)
-
-                // MARK: - Or Register With
-                HStack {
-                    Divider().frame(height: 1).background(Color.gray.opacity(0.3))
-                    Text("Or Register with")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                    Divider().frame(height: 1).background(Color.gray.opacity(0.3))
-                }
-                .padding(.vertical, 4)
-
-                // MARK: - Social Login Buttons
-                HStack(spacing: 16) {
-                    ForEach(["facebook", "google", "apple"], id: \.self) { provider in
-                        Button(action: {
-                            // Handle provider sign-up
-                        }) {
-                            Image(provider)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 24, height: 24)
-                                .padding()
-                                .background(Color(UIColor.secondarySystemBackground))
-                                .cornerRadius(12)
-                                .frame(width: 60, height: 60)
-                        }
-                    }
+                NavigationLink(destination: HomeView(), isActive: $viewModel.signUpSuccess) {
+                    EmptyView()
                 }
 
                 Spacer()
@@ -131,18 +76,20 @@ struct SignUpView: View {
                         .foregroundColor(.primary)
                         .font(.footnote)
 
-                    NavigationLink(destination: /* LoginView() */ Text("Login Screen")) {
+                    NavigationLink(destination: LoginView()) {
                         Text("Log in")
                             .font(.footnote)
                             .fontWeight(.semibold)
-                            .foregroundColor(.black)
+                            .foregroundColor(.blue)
                     }
                 }
                 .padding(.bottom, 20)
-
             }
             .padding(.horizontal, 24)
             .navigationBarHidden(true)
+            .alert(isPresented: $viewModel.signUpSuccess) {
+                Alert(title: Text("Success"), message: Text("Registration complete!"), dismissButton: .default(Text("OK")))
+            }
         }
     }
 }

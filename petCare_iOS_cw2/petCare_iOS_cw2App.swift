@@ -11,7 +11,7 @@ import SwiftUI
 struct petCare_iOS_cw2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
         }
     }
 }

@@ -20,12 +20,12 @@ struct MainTabView: View {
                     Label("Settings", systemImage: "pawprint.fill")
                 }
 
-            NotificationsView()
+            Mapview()
                 .tabItem {
                     Label("Notifications", systemImage: "bell.fill")
                 }
 
-            PetDetailsView()
+            PetDetailsView(petId:"680a4b97d8375ea92e1ff150")
                 .tabItem {
                     Label("Profile", systemImage: "stethoscope")
                 }

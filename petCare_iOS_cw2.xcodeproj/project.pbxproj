@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1ED4D80F2DB6943C00EB4949 /* petCare_iOS_cw2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D80E2DB6943C00EB4949 /* petCare_iOS_cw2App.swift */; };
-		1ED4D8112DB6943C00EB4949 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8102DB6943C00EB4949 /* ContentView.swift */; };
 		1ED4D8132DB6944100EB4949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ED4D8122DB6944100EB4949 /* Assets.xcassets */; };
 		1ED4D8162DB6944100EB4949 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ED4D8152DB6944100EB4949 /* Preview Assets.xcassets */; };
 		1ED4D8202DB6944100EB4949 /* petCare_iOS_cw2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D81F2DB6944100EB4949 /* petCare_iOS_cw2Tests.swift */; };
@@ -33,6 +32,15 @@
 		1ED4D8602DB941FE00EB4949 /* BookAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D85F2DB941FE00EB4949 /* BookAppointmentView.swift */; };
 		1ED4D8622DB9433100EB4949 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8612DB9433100EB4949 /* SettingsView.swift */; };
 		1ED4D8642DB9454400EB4949 /* Mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8632DB9454400EB4949 /* Mapview.swift */; };
+		1ED4D8822DBA8E5300EB4949 /* VetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8812DBA8E5300EB4949 /* VetCard.swift */; };
+		1ED4D8842DBA8EA000EB4949 /* ServiceTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8832DBA8EA000EB4949 /* ServiceTile.swift */; };
+		1ED4D8862DBB4AAC00EB4949 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8852DBB4AAB00EB4949 /* AuthViewModel.swift */; };
+		1ED4D8882DBB4C2A00EB4949 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8872DBB4C2A00EB4949 /* AuthService.swift */; };
+		1ED4D88A2DBB8BF000EB4949 /* pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8892DBB8BF000EB4949 /* pet.swift */; };
+		1ED4D88C2DBB8CC400EB4949 /* PetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D88B2DBB8CC400EB4949 /* PetService.swift */; };
+		1ED4D88E2DBBE8CF00EB4949 /* NearbyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D88D2DBBE8CF00EB4949 /* NearbyService.swift */; };
+		1ED4D8902DBBE90500EB4949 /* LocationMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D88F2DBBE90500EB4949 /* LocationMapViewModel.swift */; };
+		1ED4D8922DBBF27C00EB4949 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4D8912DBBF27C00EB4949 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +63,6 @@
 /* Begin PBXFileReference section */
 		1ED4D80B2DB6943C00EB4949 /* petCare_iOS_cw2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petCare_iOS_cw2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED4D80E2DB6943C00EB4949 /* petCare_iOS_cw2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = petCare_iOS_cw2App.swift; sourceTree = "<group>"; };
-		1ED4D8102DB6943C00EB4949 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1ED4D8122DB6944100EB4949 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ED4D8152DB6944100EB4949 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1ED4D81B2DB6944100EB4949 /* petCare_iOS_cw2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = petCare_iOS_cw2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +89,15 @@
 		1ED4D85F2DB941FE00EB4949 /* BookAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAppointmentView.swift; sourceTree = "<group>"; };
 		1ED4D8612DB9433100EB4949 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1ED4D8632DB9454400EB4949 /* Mapview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapview.swift; sourceTree = "<group>"; };
+		1ED4D8812DBA8E5300EB4949 /* VetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetCard.swift; sourceTree = "<group>"; };
+		1ED4D8832DBA8EA000EB4949 /* ServiceTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTile.swift; sourceTree = "<group>"; };
+		1ED4D8852DBB4AAB00EB4949 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthViewModel.swift; path = petCare_iOS_cw2/Views/SubViews/AuthViewModel.swift; sourceTree = SOURCE_ROOT; };
+		1ED4D8872DBB4C2A00EB4949 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = petCare_iOS_cw2/Views/SubViews/AuthService.swift; sourceTree = SOURCE_ROOT; };
+		1ED4D8892DBB8BF000EB4949 /* pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = pet.swift; path = petCare_iOS_cw2/Views/SubViews/pet.swift; sourceTree = SOURCE_ROOT; };
+		1ED4D88B2DBB8CC400EB4949 /* PetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetService.swift; sourceTree = "<group>"; };
+		1ED4D88D2DBBE8CF00EB4949 /* NearbyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearbyService.swift; path = petCare_iOS_cw2/Services/NearbyService.swift; sourceTree = SOURCE_ROOT; };
+		1ED4D88F2DBBE90500EB4949 /* LocationMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationMapViewModel.swift; path = petCare_iOS_cw2/Services/LocationMapViewModel.swift; sourceTree = SOURCE_ROOT; };
+		1ED4D8912DBBF27C00EB4949 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,13 +148,13 @@
 		1ED4D80D2DB6943C00EB4949 /* petCare_iOS_cw2 */ = {
 			isa = PBXGroup;
 			children = (
+				1ED4D8912DBBF27C00EB4949 /* LocationManager.swift */,
 				1ED4D83C2DB695AD00EB4949 /* Assets */,
 				1ED4D83B2DB6959E00EB4949 /* Services */,
 				1ED4D83A2DB6958E00EB4949 /* ViewModels */,
 				1ED4D8392DB6958100EB4949 /* Views */,
 				1ED4D8382DB6957700EB4949 /* Models */,
 				1ED4D80E2DB6943C00EB4949 /* petCare_iOS_cw2App.swift */,
-				1ED4D8102DB6943C00EB4949 /* ContentView.swift */,
 				1ED4D8122DB6944100EB4949 /* Assets.xcassets */,
 				1ED4D8142DB6944100EB4949 /* Preview Content */,
 			);
@@ -173,6 +189,9 @@
 		1ED4D8382DB6957700EB4949 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1ED4D8872DBB4C2A00EB4949 /* AuthService.swift */,
+				1ED4D8892DBB8BF000EB4949 /* pet.swift */,
+				1ED4D88D2DBBE8CF00EB4949 /* NearbyService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +199,7 @@
 		1ED4D8392DB6958100EB4949 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1ED4D8802DBA8E1400EB4949 /* SubViews */,
 				1ED4D83D2DB695D700EB4949 /* WelcomeView.swift */,
 				1ED4D83F2DB695E800EB4949 /* LoginView.swift */,
 				1ED4D8412DB6960100EB4949 /* SignUpView.swift */,
@@ -202,6 +222,8 @@
 		1ED4D83A2DB6958E00EB4949 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1ED4D8852DBB4AAB00EB4949 /* AuthViewModel.swift */,
+				1ED4D88F2DBBE90500EB4949 /* LocationMapViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -212,6 +234,7 @@
 				1ED4D84F2DB6969D00EB4949 /* NotificationService.swift */,
 				1ED4D8512DB696B100EB4949 /* LocationService.swift */,
 				1ED4D8532DB696C200EB4949 /* DataService.swift */,
+				1ED4D88B2DBB8CC400EB4949 /* PetService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,6 +245,15 @@
 				1ED4D8562DB6994B00EB4949 /* dog4.png */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		1ED4D8802DBA8E1400EB4949 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				1ED4D8812DBA8E5300EB4949 /* VetCard.swift */,
+				1ED4D8832DBA8EA000EB4949 /* ServiceTile.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,23 +387,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ED4D8112DB6943C00EB4949 /* ContentView.swift in Sources */,
 				1ED4D8542DB696C200EB4949 /* DataService.swift in Sources */,
+				1ED4D8902DBBE90500EB4949 /* LocationMapViewModel.swift in Sources */,
+				1ED4D8882DBB4C2A00EB4949 /* AuthService.swift in Sources */,
 				1ED4D84C2DB6967000EB4949 /* NotificationsView.swift in Sources */,
 				1ED4D8422DB6960100EB4949 /* SignUpView.swift in Sources */,
+				1ED4D88E2DBBE8CF00EB4949 /* NearbyService.swift in Sources */,
+				1ED4D8842DBA8EA000EB4949 /* ServiceTile.swift in Sources */,
+				1ED4D88A2DBB8BF000EB4949 /* pet.swift in Sources */,
 				1ED4D83E2DB695D700EB4949 /* WelcomeView.swift in Sources */,
 				1ED4D8502DB6969D00EB4949 /* NotificationService.swift in Sources */,
 				1ED4D85C2DB8DFCB00EB4949 /* PetCareModel.xcdatamodeld in Sources */,
 				1ED4D8442DB6961F00EB4949 /* HomeView.swift in Sources */,
 				1ED4D8402DB695E800EB4949 /* LoginView.swift in Sources */,
 				1ED4D84A2DB6965F00EB4949 /* ReportView.swift in Sources */,
+				1ED4D8822DBA8E5300EB4949 /* VetCard.swift in Sources */,
 				1ED4D8482DB6964F00EB4949 /* LostAndFoundView.swift in Sources */,
+				1ED4D88C2DBB8CC400EB4949 /* PetService.swift in Sources */,
 				1ED4D8602DB941FE00EB4949 /* BookAppointmentView.swift in Sources */,
 				1ED4D8522DB696B100EB4949 /* LocationService.swift in Sources */,
 				1ED4D8642DB9454400EB4949 /* Mapview.swift in Sources */,
 				1ED4D85E2DB9410200EB4949 /* AppointmentsView.swift in Sources */,
 				1ED4D80F2DB6943C00EB4949 /* petCare_iOS_cw2App.swift in Sources */,
 				1ED4D84E2DB6968100EB4949 /* ProfileView.swift in Sources */,
+				1ED4D8862DBB4AAC00EB4949 /* AuthViewModel.swift in Sources */,
+				1ED4D8922DBBF27C00EB4949 /* LocationManager.swift in Sources */,
 				1ED4D8462DB6963B00EB4949 /* PetDetailsView.swift in Sources */,
 				1ED4D8592DB8D4D200EB4949 /* MainTabView.swift in Sources */,
 				1ED4D8622DB9433100EB4949 /* SettingsView.swift in Sources */,
@@ -540,6 +580,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"petCare_iOS_cw2/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide updates for nearby pet services even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show nearby pet services.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -568,6 +611,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"petCare_iOS_cw2/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide updates for nearby pet services even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show nearby pet services.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

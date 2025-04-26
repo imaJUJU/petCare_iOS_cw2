@@ -8,99 +8,123 @@
 import SwiftUI
 
 struct PetDetailsView: View {
+    let petId: String
+    @State private var pet: Pet?
+    @State private var isLoading = true
+    @State private var errorMessage: String?
+
     var body: some View {
         VStack(spacing: 16) {
-            
-            // Header
-            HStack {
-                Button(action: {
-                    // Handle back action
-                }) {
-                    Image(systemName: "chevron.left")
-                        .font(.title2)
-                        .foregroundColor(.blue)
+            if isLoading {
+                ProgressView("Loading...")
+            } else if let pet = pet {
+                petHeaderView(pet: pet)
+                petBasicInfo(pet: pet)
+
+                if let vaccinations = pet.vaccinations, !vaccinations.isEmpty {
+                    vaccinationSection(vaccinations)
                 }
-                
+
+                if let medications = pet.medications, !medications.isEmpty {
+                    medicationSection(medications)
+                }
+
+
                 Spacer()
-                
-                Text("Pet Profile")
-                    .font(.title2).bold()
-                
-                Spacer()
-                
-                Button(action: {
-                    // Handle notifications
-                }) {
-                    Image(systemName: "bell.fill")
-                        .foregroundColor(.blue)
+            } else if let error = errorMessage {
+                Text(error)
+                    .foregroundColor(.red)
+            }
+        }
+        .onAppear {
+            fetchPet()
+        }
+        .padding()
+    }
+
+    func fetchPet() {
+        PetService.shared.fetchPet(by: petId) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let pet):
+                    self.pet = pet
+                    self.isLoading = false
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    self.isLoading = false
                 }
             }
-            .padding(.horizontal)
-            
-            // Pet Image
-            VStack {
-                ZStack {
-                    Circle()
-                        .fill(Color.pink.opacity(0.3))
-                        .frame(width: 120, height: 120)
-                    
-                    Image("dog") // replace with your image name
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
-                    
-                    Circle()
-                        .fill(Color.black)
-                        .frame(width: 30, height: 30)
-                        .overlay(Image(systemName: "plus")
-                            .foregroundColor(.white)
-                        )
-                        .offset(x: 40, y: 40)
-                }
-                
-                Text("Lilly")
-                    .font(.title2)
-                    .bold()
-                Text("Shih tzu ~ 2 years old")
-                    .foregroundColor(.gray)
-            }
-            .padding(.top)
-            
-            // Basic Info
-            VStack(alignment: .leading, spacing: 16) {
-                HStack {
-                    Text("Basic Info")
-                        .font(.headline)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        // Handle Edit
-                    }) {
-                        Text("Edit")
-                            .foregroundColor(.gray)
-                    }
-                }
-                
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                    infoItem(icon: "pawprint.fill", label: "Species", value: "Dog")
-                    infoItem(icon: "birthday.cake.fill", label: "Birthday", value: "22/11/2022")
-                    infoItem(icon: "scalemass.fill", label: "Weight", value: "7.2 kg")
-                    infoItem(icon: "pencil", label: "Pet Name", value: "Lilies")
-                    infoItem(icon: "figure.stand.line.dotted.figure.stand", label: "Sex", value: "Female")
-                    infoItem(icon: "heart.fill", label: "Breed", value: "Shih Tzu")
-                }
-            }
-            .padding()
-            .background(Color(.systemGray6))
-            .cornerRadius(20)
-            .padding(.horizontal)
-            
-            Spacer()
         }
     }
-    
+
+    func petHeaderView(pet: Pet) -> some View {
+        VStack {
+      
+            Image("dog5")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 100, height: 100)
+                .clipShape(Circle())
+                .foregroundColor(.gray)
+
+            Text(pet.name)
+                .font(.title2)
+                .bold()
+            Text("\(pet.breed) ~ \(pet.age) years old")
+                .foregroundColor(.gray)
+        }
+    }
+
+    func petBasicInfo(pet: Pet) -> some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Basic Info")
+                .font(.headline)
+
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                infoItem(icon: "birthday.cake.fill", label: "Age", value: "\(pet.age) years")
+                infoItem(icon: "scalemass.fill", label: "Weight", value: "\(pet.weightKg) kg")
+                infoItem(icon: "figure.stand.line.dotted.figure.stand", label: "Gender", value: pet.gender)
+                infoItem(icon: "pawprint.fill", label: "Species", value: pet.species)
+                infoItem(icon: "heart.fill", label: "Breed", value: pet.breed)
+                infoItem(icon: "pencil", label: "Pet Name", value: pet.name)
+            }
+        }
+        .padding()
+        .background(Color(.systemGray6))
+        .cornerRadius(20)
+    }
+
+    func vaccinationSection(_ vaccinations: [Vaccination]) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Vaccinations")
+                .font(.headline)
+            ForEach(vaccinations, id: \.name) { vaccination in
+                Text("• \(vaccination.name) - Next due: \(vaccination.nextDue)")
+                    .font(.subheadline)
+            }
+        }
+        .padding()
+        .background(Color(.systemGray6))
+        .cornerRadius(15)
+        .padding(.horizontal)
+    }
+
+
+    func medicationSection(_ medications: [Medication]) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Medications")
+                .font(.headline)
+            ForEach(medications, id: \.name) { medication in
+                Text("• \(medication.name), Dose: \(medication.dose), From: \(medication.startDate) to \(medication.endDate)")
+                    .font(.subheadline)
+            }
+        }
+        .padding()
+        .background(Color(.systemGray6))
+        .cornerRadius(15)
+        .padding(.horizontal)
+    }
+
     func infoItem(icon: String, label: String, value: String) -> some View {
         VStack(spacing: 6) {
             Image(systemName: icon)
@@ -118,7 +142,9 @@ struct PetDetailsView: View {
 
 struct PetDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        PetDetailsView()
+        PetDetailsView(petId: "680a4b97d8375ea92e1ff150")
     }
 }
+
+
 
